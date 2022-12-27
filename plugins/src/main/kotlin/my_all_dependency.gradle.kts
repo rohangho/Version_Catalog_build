@@ -15,3 +15,12 @@ tasks.getByName("build"){
 tasks.getByName("check"){
     group = builderTaskGroup
 }
+
+
+// If we want to create a task which will depends on other task to complete
+tasks.register("anc")
+{
+    description = "custom tasks which depends on other tasks to complete"
+    group = builderTaskGroup
+    dependsOn(tasks.getByName("check"),tasks.getByName("build"))
+}

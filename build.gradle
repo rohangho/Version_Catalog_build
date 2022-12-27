@@ -5,3 +5,23 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
     id 'com.android.dynamic-feature' version '7.3.1' apply false
 }
+
+// Here we can write separate task for the root project which we want to run in CI or in local machine
+
+"""
+Written in kotlin
+
+val globaltask = "My global build";
+//val forCi = "My Ci build"
+
+tasks.named<TaskReportTask>("tasks"){
+    displayName = globaltask
+}
+
+tasks.register("qualtyCheck") {
+    group = globaltask
+    dependsOn()
+}
+
+
+"""
