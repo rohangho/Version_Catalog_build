@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.dynamic-feature'
-    id 'org.jetbrains.kotlin.android'
+    id 'my_all_dependency'
+
 }
 android {
     namespace 'com.example.dynamicfeature2'
